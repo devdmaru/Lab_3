@@ -25,7 +25,7 @@ public class PaletteActivity extends Activity {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         // An arraylist will hold the items.
         ArrayList <Colour> colors = new ArrayList<>();
-        // Adding the colours to the
+        // Adding the colours to the arraylist
         colors.add(new Colour("White"));
         colors.add(new Colour("Red"));
         colors.add(new Colour("Blue"));
@@ -52,7 +52,7 @@ public class PaletteActivity extends Activity {
         });
 
     }
-
+    //Sending a string from the main activity to the secondary activity.
     public void sendMessage(AdapterView parent, int position) {
         Intent intent = new Intent(this, CanvasActivity.class);
         String message = ((Colour)parent.getItemAtPosition(position)).getName();

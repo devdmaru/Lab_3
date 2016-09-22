@@ -39,7 +39,7 @@ public class CustomAdapter extends BaseAdapter {
 
         return 0;
     }
-
+    // Setting the custom adapter to hold the views
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LinearLayout layout;
@@ -58,13 +58,8 @@ public class CustomAdapter extends BaseAdapter {
 
 
            nameTextView.setText(items.get(position).getName());
-
-
-
            nameTextView.setTextSize(30);
            nameTextView.setMaxWidth(500);
-
-
            nameTextView.setTextColor(android.graphics.Color.BLACK);
            nameTextView.setBackgroundColor(getColor(position));
 
@@ -74,7 +69,7 @@ public class CustomAdapter extends BaseAdapter {
 
         return layout;
     }
-
+    // Returns an integer value for the string value of the colour.
     public int getColor(int position){
 
         if(items.get(position).getName().equals("Red")){

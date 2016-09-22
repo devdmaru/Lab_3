@@ -13,18 +13,13 @@ public class CanvasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
-
-
-        setContentView(R.layout.activity_canvas);
+        // Getting intent from the main activity
         Intent intent = getIntent();
+        // Getting the message from the main activity.
         String message = intent.getStringExtra(PaletteActivity.MESSAGE);
         System.out.println("Message" + message);
 
-
-
-
-
-
+        // Checking to see if the message matches a string, and then setting the color of the secondary activity.
         if(message.equals("Red")){
             getWindow().getDecorView().setBackgroundColor(Color.RED);
         }
