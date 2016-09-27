@@ -70,7 +70,7 @@ public class CustomAdapter extends BaseAdapter {
         return layout;
     }
     // Returns an integer value for the string value of the colour.
-    public int getColor(int position){
+    private int getColor(int position){
 
         if(items.get(position).getName().equals("Red")){
             return Color.RED;

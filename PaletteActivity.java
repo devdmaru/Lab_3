@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-public class PaletteActivity extends Activity {
+public class PaletteActivity extends AppCompatActivity {
     public static String MESSAGE = "";
     boolean firstLoadSelection = true;
     @Override
@@ -22,7 +23,7 @@ public class PaletteActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_palette);
         // Creating a spinner for displaying the items.
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        ListView listView = (ListView) findViewById(R.id.listView);
         // An arraylist will hold the items.
         ArrayList <Colour> colors = new ArrayList<>();
         // Adding the colours to the arraylist
@@ -34,20 +35,12 @@ public class PaletteActivity extends Activity {
 
         CustomAdapter adapter = new CustomAdapter(this,colors);
 
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (!firstLoadSelection) {
-                    sendMessage(parent, position);
-
-                }
-                firstLoadSelection = false;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                sendMessage(parent, position);
             }
         });
 
