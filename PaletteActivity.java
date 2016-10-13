@@ -3,6 +3,7 @@ package edu.temple.lab_3;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,12 +27,16 @@ public class PaletteActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.listView);
         // An arraylist will hold the items.
         ArrayList <Colour> colors = new ArrayList<>();
+        Resources res = getResources();
+        String [] colours = res.getStringArray(R.array.Colors);
+
+
         // Adding the colours to the arraylist
-        colors.add(new Colour("White"));
-        colors.add(new Colour("Red"));
-        colors.add(new Colour("Blue"));
-        colors.add(new Colour("Green"));
-        colors.add(new Colour("Yellow"));
+        colors.add(new Colour(colours[0]));
+        colors.add(new Colour(colours[1]));
+        colors.add(new Colour(colours[2]));
+        colors.add(new Colour(colours[3]));
+        colors.add(new Colour(colours[4]));
 
         CustomAdapter adapter = new CustomAdapter(this,colors);
 

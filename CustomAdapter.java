@@ -72,16 +72,16 @@ public class CustomAdapter extends BaseAdapter {
     // Returns an integer value for the string value of the colour.
     private int getColor(int position){
 
-        if(items.get(position).getName().equals("Red")){
+        if(items.get(position).getName().equals("Red") || items.get(position).getName().equals("Rojo")){
             return Color.RED;
         }
-        else if(items.get(position).getName().equals("Blue")){
+        else if(items.get(position).getName().equals("Blue") || items.get(position).getName().equals("Azul")){
             return Color.BLUE;
         }
-        else if(items.get(position).getName().equals("Green")){
+        else if (items.get(position).getName().equals("Green") || items.get(position).getName().equals("Verde")){
             return Color.GREEN;
         }
-        else if(items.get(position).getName().equals("White")){
+        else if(items.get(position).getName().equals("White") || items.get(position).getName().equals("Blanco")){
             return Color.WHITE;
         }
         return Color.YELLOW;

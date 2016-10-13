@@ -25,16 +25,16 @@ public class CanvasActivity extends AppCompatActivity {
         }
 
         // Checking to see if the message matches a string, and then setting the color of the secondary activity.
-        if(message.equals("Red")){
+        if(message.equals("Red") || message.equals("Rojo")){
             getWindow().getDecorView().setBackgroundColor(Color.RED);
         }
-        else if(message.equals("Blue")) {
+        else if(message.equals("Blue") || message.equals("Azul")) {
             getWindow().getDecorView().setBackgroundColor(Color.BLUE);
         }
-        else if (message.equals("Green")){
+        else if (message.equals("Green") || message.equals("Verde")){
             getWindow().getDecorView().setBackgroundColor(Color.GREEN);
         }
-        else if(message.equals("Yellow")) {
+        else if(message.equals("Yellow") || message.equals("Amarillo")) {
             getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
         }
         else{
